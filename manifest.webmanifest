@@ -1,0 +1,14 @@
+{
+  "name": "Kitobxon — Onlayn kutubxona",
+  "short_name": "Kitobxon",
+  "description": "3 tilda kitob o'qish, qidiruv va o'qish jarayonini saqlash.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ea",
+  "theme_color": "#221b35",
+  "lang": "uz",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
