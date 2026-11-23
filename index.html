@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kitobxon — onlayn kutubxona. Minglab kitoblar, qulay o'qish va har kuni yangi bilim.">
+  <meta name="theme-color" content="#221b35">
+  <meta property="og:title" content="Kitobxon — Onlayn kutubxona">
+  <meta property="og:description" content="Minglab kitoblar, qulay o'qish va har kuni yangi bilim. 3D aylanadigan kitob bilan tanishing.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://a1dumalikov.github.io/kitobxon/">
+  <title>Kitobxon — Onlayn kutubxona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#asosiy">Mazmunga o'tish</a>
+
+  <header class="header" id="bosh">
+    <div class="container header__inner">
+      <a class="brand" href="#bosh" aria-label="Kitobxon — bosh sahifa">
+        <span class="brand__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M4 6.5c4-1.6 8-1.6 12 0v19c-4-1.6-8-1.6-12 0v-19ZM28 6.5c-4-1.6-8-1.6-12 0v19c4-1.6 8-1.6 12 0v-19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 6.5v19" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <span>kitobxon<span class="brand__dot">.</span></span>
+      </a>
+
+      <nav class="nav" id="menyu" aria-label="Asosiy menyu">
+        <a href="#katalog">Katalog</a>
+        <a href="#tanlov">Hafta tanlovi</a>
+        <a href="#qanday">Qanday ishlaydi</a>
+        <a href="#biz">Biz haqimizda</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="search-toggle" aria-label="Kitob qidirish">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <a class="btn btn--small" href="#katalog">Kutubxonaga kirish</a>
+        <button class="menu-btn" type="button" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menyu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <form class="header-search" id="header-search" hidden>
+      <label class="sr-only" for="header-q">Kitob yoki muallif qidirish</label>
+      <input id="header-q" type="search" placeholder="Kitob nomi yoki muallifni yozing...">
+      <button type="submit" class="btn btn--small">Qidirish</button>
+    </form>
+  </header>
+
+  <main id="asosiy">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="kicker">Har kuni 2000+ yangi o'quvchi qo'shiladi</p>
+          <h1>Har bir sahifa — <em>yangi dunyo.</em></h1>
+          <p class="hero__lead">Minglab kitoblar bir joyda. Sevimli asaringizni toping, o'qing va bilim donlarini to'plang — istalgan vaqtda, istalgan joydan.</p>
+          <form class="hero-search" id="hero-search">
+            <label class="sr-only" for="hero-q">Kitob qidirish</label>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input id="hero-q" type="search" placeholder="Kitob yoki muallif nomini yozing...">
+            <button type="submit">Topish</button>
+          </form>
+          <div class="hero__stats">
+            <div><strong>12 400+</strong><span>kitob</span></div>
+            <div><strong>86 000</strong><span>o'quvchi</span></div>
+            <div><strong>4.9/5</strong><span>baho</span></div>
+          </div>
+        </div>
+
+        <div class="hero__stage">
+          <div class="stage__glow" aria-hidden="true"></div>
+          <div class="book-scene" id="book-scene" role="img" aria-label="Aylanib turadigan 3D kitob">
+            <div class="book" id="book">
+              <div class="book__back" aria-hidden="true"></div>
+              <div class="book__spine" aria-hidden="true"><span>KITOBXON</span></div>
+              <div class="book__pages-side" aria-hidden="true"></div>
+              <div class="book__page book__page--2" aria-hidden="true">
+                <div class="page-face">
+                  <p>Bob ikkinchi</p>
+                  <h3>Sahifalar orasida</h3>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="book__page book__page--1" aria-hidden="true">
+                <div class="page-face">
+                  <p>Bob birinchi</p>
+                  <h3>Kitob ochilganda...</h3>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="page-face page-face--back">
+                  <p>Bob uchinchi</p>
+                  <h3>Yangi sahifa, yangi fikr</h3>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="book__front" id="book-front">
+                <div class="book__cover">
+                  <p class="cover__top">KITOBXON NASHRI</p>
+                  <div class="cover__ornament" aria-hidden="true">✦</div>
+                  <h2>Sahifalar<br>orotidagi<br>dunyo</h2>
+                  <p class="cover__bottom">BILIM · BADIY · TARIX</p>
+                </div>
+                <div class="book__cover-back" aria-hidden="true"><span>✦</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage__controls">
+            <button type="button" id="flip-btn" aria-pressed="false">Kitobni ochish</button>
+            <span>Chimchilab aylantiring yoki bosing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Badiiy adabiyot ✦ Tarix ✦ Fan ✦ Bolalar kitoblari ✦ Psixologiya ✦ Tasviriy san'at ✦ Badiiy adabiyot ✦ Tarix ✦ Fan ✦ Bolalar kitoblari ✦ Psixologiya ✦ Tasviriy san'at ✦</span>
+        <span>Badiiy adabiyot ✦ Tarix ✦ Fan ✦ Bolalar kitoblari ✦ Psixologiya ✦ Tasviriy san'at ✦ Badiiy adabiyot ✦ Tarix ✦ Fan ✦ Bolalar kitoblari ✦ Psixologiya ✦ Tasviriy san'at ✦</span>
+      </div>
+    </section>
+
+    <section class="section" id="katalog">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section__tag">Kutubxona javoni</p>
+            <h2>O'zingizga kitob toping</h2>
+          </div>
+          <p>Tanlangan asarlar — klassikadagi eng yaxshi va zamonaviy adaptersi. Sahifani ochib, darhol o'qishni boshlang.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <div class="filters" role="group" aria-label="Janr bo'yicha filtrlash">
+            <button class="filter is-active" type="button" data-genre="hammasi">Hammasi</button>
+            <button class="filter" type="button" data-genre="roman">Roman</button>
+            <button class="filter" type="button" data-genre="sarguzasht">Sarguzasht</button>
+            <button class="filter" type="button" data-genre="ertak">Ertak</button>
+            <button class="filter" type="button" data-genre="tarix">Tarix</button>
+            <button class="filter" type="button" data-genre="saqlangan">Saqlanganlar</button>
+          </div>
+          <label class="sort">Saralash
+            <select id="sort-select">
+              <option value="default">Nom bo'yicha</option>
+              <option value="rating">Eng yuqori baho</option>
+              <option value="year">Yangi chiqqanlar</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="books" id="books-grid">
+          <article class="book-card" data-genre="roman" data-title="O'tgan kunlar" data-author="Abdulla Qodiriy" data-rating="4.9" data-year="1926">
+            <div class="cover" style="--cover:#3c2c56;--cover-accent:#e2bd7a"><span class="cover__label">O'ZBEK ADABIYOTI</span><h3>O'tgan kunlar</h3><p>Abdulla Qodiriy</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Roman · 1926</p><div class="book-card__foot"><span>★ 4.9</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="roman" data-title="Kichik shahzoda" data-author="Antuan de Sent-Ekzyuperi" data-rating="4.8" data-year="1943">
+            <div class="cover" style="--cover:#1e5d6c;--cover-accent:#f0c98b"><span class="cover__label">JAHON KLASSIKASI</span><h3>Kichik shahzoda</h3><p>A. de Sent-Ekzyuperi</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Roman · 1943</p><div class="book-card__foot"><span>★ 4.8</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="sarguzasht" data-title="Robinzon Kruzo" data-author="Daniel Defo" data-rating="4.7" data-year="1719">
+            <div class="cover" style="--cover:#7a4b2e;--cover-accent:#f4d59e"><span class="cover__label">SARGUZASHT</span><h3>Robinzon Kruzo</h3><p>Daniel Defo</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Sarguzasht · 1719</p><div class="book-card__foot"><span>★ 4.7</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="roman" data-title="Jinoyat va jazo" data-author="Fyodor Dostoyevskiy" data-rating="4.9" data-year="1866">
+            <div class="cover" style="--cover:#2f3d4f;--cover-accent:#d6b778"><span class="cover__label">JAHON KLASSIKASI</span><h3>Jinoyat va jazo</h3><p>F. Dostoyevskiy</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Roman · 1866</p><div class="book-card__foot"><span>★ 4.9</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="ertak" data-title="Ming bir kecha" data-author="Xalq ertaklari" data-rating="4.6" data-year="1830">
+            <div class="cover" style="--cover:#8a5b1f;--cover-accent:#f6df9f"><span class="cover__label">XALQ ERTAKLARI</span><h3>Ming bir kecha</h3><p>Xalq ertaklari</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Ertak · 1830</p><div class="book-card__foot"><span>★ 4.6</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="sarguzasht" data-title="Tom Soyerning sarguzashtlari" data-author="Mark Tven" data-rating="4.7" data-year="1876">
+            <div class="cover" style="--cover:#3f6b52;--cover-accent:#e9cf94"><span class="cover__label">SARGUZASHT</span><h3>Tom Soyer</h3><p>Mark Tven</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Sarguzasht · 1876</p><div class="book-card__foot"><span>★ 4.7</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="tarix" data-title="O'tmish sari sayohat" data-author="Tarixchi sayyoh" data-rating="4.5" data-year="2021">
+            <div class="cover" style="--cover:#5d3b4d;--cover-accent:#e8c79a"><span class="cover__label">TARIX</span><h3>O'tmish sari sayohat</h3><p>Tarixchi sayyoh</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Tarix · 2021</p><div class="book-card__foot"><span>★ 4.5</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+          <article class="book-card" data-genre="roman" data-title="Alkimyogar" data-author="Paulo Koelyo" data-rating="4.6" data-year="1988">
+            <div class="cover" style="--cover:#264f5a;--cover-accent:#ecc884"><span class="cover__label">ZAMONAVIY ROMAN</span><h3>Alkimyogar</h3><p>Paulo Koelyo</p><span class="cover__line"></span></div>
+            <div class="book-card__body"><p class="book-card__genre">Roman · 1988</p><div class="book-card__foot"><span>★ 4.6</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
+          </article>
+        </div>
+        <p class="empty-state" id="empty-state" hidden>Hech narsa topilmadi. Boshqa so'z bilan qidirib ko'ring.</p>
+      </div>
+    </section>
+
+    <section class="feature" id="tanlov">
+      <div class="container feature__inner">
+        <div class="feature__book" aria-hidden="true">
+          <div class="feature__book-back"></div>
+          <div class="feature__book-front"><span>HAFTA TANLOVI</span><strong>Yorug'lik<br>sari yo'l</strong><i>✦</i></div>
+        </div>
+        <div class="feature__text">
+          <p class="section__tag">Hafta tanlovi</p>
+          <h2>Bu hafta nimani o'qish kerak?</h2>
+          <p>Tahririyatimiz tanlagan asar — kichik detallarda katta ma'no topish haqida. Har hafta yangi tanlov, har kuni yangi kashfiyot.</p>
+          <ul class="feature__meta"><li>350 sahifa</li><li>O'zbek tilida</li><li>Audio ham bor</li></ul>
+          <button class="btn btn--light" type="button" data-read="Yorug'lik sari yo'l" data-author="Kitobxon tahririyati">O'qishni boshlash</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qanday">
+      <div class="container">
+        <div class="section__head"><div><p class="section__tag">Oddiy va qulay</p><h2>Üch qadamda o'qishga tayyor</h2></div></div>
+        <div class="steps">
+          <div class="step"><span>01</span><h3>Qidiring</h3><p>Nom, muallif yoki janr bo'yicha kerakli kitobni toping.</p></div>
+          <div class="step"><span>02</span><h3>Saqlang</h3><p>Sevimlilaringizni yulduzcha bilan belgilab, keyin oson toping.</p></div>
+          <div class="step"><span>03</span><h3>O'qing</h3><p>Kitobni ochib, istalgan joyidan o'qishni boshlang.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="biz">
+      <div class="container join__inner">
+        <div><p class="section__tag">Kitobxon jamiyati</p><h2>Bilimga birga yo'l olaylik</h2><p>Har oy yangi kitoblar, o'quvchilar bilan uchrashuvlar va faqat a'zolarga xos tavsiyalar.</p></div>
+        <form class="join__form" id="join-form" novalidate>
+          <label class="sr-only" for="email">Elektron pochta</label>
+          <input id="email" type="email" placeholder="Elektron pochtangizni yozing" required>
+          <button class="btn" type="submit">Qo'shilish</button>
+          <p id="join-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><a class="brand brand--footer" href="#bosh"><span class="brand__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M4 6.5c4-1.6 8-1.6 12 0v19c-4-1.6-8-1.6-12 0v-19ZM28 6.5c-4-1.6-8-1.6-12 0v19c4-1.6 8-1.6 12 0v-19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 6.5v19" stroke="currentColor" stroke-width="2"/></svg></span><span>kitobxon<span class="brand__dot">.</span></span></a><p>Kitoblar bilan dunyoni kashf eting. Har bir sahifa sizniki.</p></div>
+      <div><h3>Kutubxona</h3><ul class="footer__links"><li><a href="#katalog">Katalog</a></li><li><a href="#tanlov">Hafta tanlovi</a></li><li><a href="#qanday">Qanday ishlaydi</a></li></ul></div>
+      <div><h3>Biz bilan</h3><ul class="footer__links"><li><a href="mailto:assalom@kitobxon.uz">assalom@kitobxon.uz</a></li><li><a href="#biz">Hamkorlik</a></li><li><a href="#biz">A'zo bo'lish</a></li></ul></div>
+      <div><h3>E'tibor bering</h3><p>Dushanba — juma<br>09:00 — 18:00<br>Onlayn kutubxona kechayu kunduz ochiq.</p></div>
+    </div>
+    <div class="container footer__bottom"><p>© <span id="yil">2026</span> Kitobxon. Barcha huquqlar himoyalangan.</p><p>Kitoblarga muhabbat bilan yaratildi.</p></div>
+  </footer>
+
+  <div class="reader" id="reader" hidden>
+    <div class="reader__backdrop" data-close></div>
+    <div class="reader__dialog" role="dialog" aria-modal="true" aria-labelledby="reader-title">
+      <button class="reader__close" type="button" data-close aria-label="Yopish">×</button>
+      <div class="reader__side"><p>KITOBXON</p><div class="reader__mini-cover" id="reader-cover"></div><small id="reader-author"></small></div>
+      <div class="reader__content">
+        <p class="reader__eyebrow" id="reader-page">1-sahifa</p>
+        <h2 id="reader-title">Kitob</h2>
+        <div class="reader__text" id="reader-text"></div>
+        <div class="reader__nav"><button type="button" id="prev-page">Oldingi sahifa</button><button type="button" id="next-page">Keyingi sahifa</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
