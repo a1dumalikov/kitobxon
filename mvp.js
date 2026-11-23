@@ -121,14 +121,20 @@
       <div class="modal__dialog modal__dialog--wide" role="dialog" aria-modal="true"><button class="modal__close" type="button" data-close aria-label="${tr('close')}">×</button><div id="admin-body"></div></div>
     </div>`);
 
+  const modals = $$('.modal');
+  const hideModal = (el) => { el.hidden = true; el.style.display = 'none'; };
+  modals.forEach(hideModal);
   const openModal = (id) => {
-    document.getElementById(id).hidden = false;
+    modals.forEach((m) => { if (m.id !== id) hideModal(m); });
+    const el = document.getElementById(id);
+    el.hidden = false;
+    el.style.display = 'grid';
     document.body.style.overflow = 'hidden';
-    $('.modal__close', document.getElementById(id)).focus();
+    $('.modal__close', el).focus();
   };
   const closeModal = (el) => {
-    el.hidden = true;
-    if ($('#reader').hidden) document.body.style.overflow = '';
+    hideModal(el);
+    if (modals.every((m) => m.hidden) && $('#reader').hidden) document.body.style.overflow = '';
   };
   $$('.modal').forEach((m) => m.addEventListener('click', (e) => {
     if (e.target.closest('[data-close]')) closeModal(m);
@@ -420,7 +426,7 @@
 
   /* PWA */
   document.head.insertAdjacentHTML('beforeend', '<link rel="manifest" href="manifest.webmanifest">');
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').then((reg) => reg.update()).catch(() => {});
   let installEvent = null;
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault(); installEvent = e; $('#install-btn').hidden = false;
