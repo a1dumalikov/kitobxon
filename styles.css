@@ -66,6 +66,10 @@ button { cursor: pointer; }
 .icon-btn { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: transparent; }
 .icon-btn svg { width: 20px; height: 20px; }
 .icon-btn:hover { border-color: var(--ink); }
+.lang-switch { display: flex; align-items: center; gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.lang-switch button { min-width: 34px; height: 30px; padding: 0 6px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font: 700 11px/1 inherit; letter-spacing: .04em; cursor: pointer; }
+.lang-switch button:hover { color: var(--ink); }
+.lang-switch button[aria-pressed="true"] { background: var(--brand); color: var(--onbrand); }
 .btn { display: inline-flex; align-items: center; justify-content: center; background: var(--brand); color: var(--onbrand); border: 0; border-radius: 10px; padding: 13px 22px; font-size: .9rem; font-weight: 800; transition: transform .18s ease, background .18s ease; }
 .btn:hover { transform: translateY(-2px); background: var(--brand-2); }
 .btn--small { padding: 10px 16px; font-size: .84rem; }
