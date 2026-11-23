@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450">
+<defs><linearGradient id="g" x2="0" y2="1"><stop stop-color="#43546b"/><stop offset="1" stop-color="#b58a67"/></linearGradient></defs>
+<rect width="300" height="450" fill="url(#g)"/>
+<circle cx="235" cy="95" r="30" fill="#f2dfb4"/>
+<path d="M0 320q150-35 300 0v130H0z" fill="#8f9c72"/>
+<g transform="translate(205 240)" stroke="#e6d6b4" stroke-width="6" fill="none" opacity=".9">
+<circle cx="0" cy="0" r="55"/><path d="M0 0h55M0 0l39 39M0 0l39-39M0 0l-39 39M0 0l-39-39M0 0v55M0 0v-55"/>
+</g>
+<path d="M205 240v95" stroke="#6b5138" stroke-width="9"/>
+<g transform="translate(95 320)">
+<path d="M-55 60q20-45 60-35l30-25 12 12-28 28q25 25 5 45z" fill="#e8e0cd"/>
+<circle cx="52" cy="27" r="13" fill="#e8e0cd"/>
+<path d="M35 30q-18-22-40-10" stroke="#8c7c66" stroke-width="4" fill="none"/>
+<path d="M-40 20L40-55" stroke="#7b5a3a" stroke-width="5"/>
+<path d="M40-55l12-10-4 16z" fill="#d8c9a8"/>
+</g>
+<path d="M0 420h300" stroke="#f4d79b" stroke-width="3" opacity=".6"/>
+</svg>

@@ -14,6 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('kitobxon-theme');
+      if (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#asosiy">Mazmunga o'tish</a>
@@ -38,13 +46,14 @@
         <button class="icon-btn" type="button" id="search-toggle" aria-label="Kitob qidirish">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </button>
+        <button class="icon-btn theme-btn" type="button" id="theme-toggle" aria-label="Dark rejimga o'tish" title="Dark / Light">☾</button>
         <a class="btn btn--small" href="#katalog">Kutubxonaga kirish</a>
         <button class="menu-btn" type="button" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menyu"><span></span><span></span><span></span></button>
       </div>
     </div>
     <form class="header-search" id="header-search" hidden>
       <label class="sr-only" for="header-q">Kitob yoki muallif qidirish</label>
-      <input id="header-q" type="search" placeholder="Kitob nomi yoki muallifni yozing...">
+      <input id="header-q" type="search" list="qidiruv-taklif" placeholder="Kitob nomi yoki muallifni yozing...">
       <button type="submit" class="btn btn--small">Qidirish</button>
     </form>
   </header>
@@ -59,7 +68,7 @@
           <form class="hero-search" id="hero-search">
             <label class="sr-only" for="hero-q">Kitob qidirish</label>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            <input id="hero-q" type="search" placeholder="Kitob yoki muallif nomini yozing...">
+            <input id="hero-q" type="search" list="qidiruv-taklif" placeholder="Kitob yoki muallif nomini yozing...">
             <button type="submit">Topish</button>
           </form>
           <div class="hero__stats">
@@ -140,49 +149,22 @@
             <button class="filter" type="button" data-genre="tarix">Tarix</button>
             <button class="filter" type="button" data-genre="saqlangan">Saqlanganlar</button>
           </div>
-          <label class="sort">Saralash
-            <select id="sort-select">
-              <option value="default">Nom bo'yicha</option>
-              <option value="rating">Eng yuqori baho</option>
-              <option value="year">Yangi chiqqanlar</option>
-            </select>
-          </label>
+          <div class="catalog-selects">
+            <label class="sort">Muallif
+              <select id="author-select"><option value="">Barcha mualliflar</option></select>
+            </label>
+            <label class="sort">Saralash
+              <select id="sort-select">
+                <option value="default">Nom bo'yicha</option>
+                <option value="rating">Eng yuqori baho</option>
+                <option value="year">Yangi chiqqanlar</option>
+              </select>
+            </label>
+          </div>
         </div>
 
-        <div class="books" id="books-grid">
-          <article class="book-card" data-genre="roman" data-title="O'tgan kunlar" data-author="Abdulla Qodiriy" data-rating="4.9" data-year="1926">
-            <div class="cover" style="--cover:#3c2c56;--cover-accent:#e2bd7a"><span class="cover__label">O'ZBEK ADABIYOTI</span><h3>O'tgan kunlar</h3><p>Abdulla Qodiriy</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Roman · 1926</p><div class="book-card__foot"><span>★ 4.9</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="roman" data-title="Kichik shahzoda" data-author="Antuan de Sent-Ekzyuperi" data-rating="4.8" data-year="1943">
-            <div class="cover" style="--cover:#1e5d6c;--cover-accent:#f0c98b"><span class="cover__label">JAHON KLASSIKASI</span><h3>Kichik shahzoda</h3><p>A. de Sent-Ekzyuperi</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Roman · 1943</p><div class="book-card__foot"><span>★ 4.8</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="sarguzasht" data-title="Robinzon Kruzo" data-author="Daniel Defo" data-rating="4.7" data-year="1719">
-            <div class="cover" style="--cover:#7a4b2e;--cover-accent:#f4d59e"><span class="cover__label">SARGUZASHT</span><h3>Robinzon Kruzo</h3><p>Daniel Defo</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Sarguzasht · 1719</p><div class="book-card__foot"><span>★ 4.7</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="roman" data-title="Jinoyat va jazo" data-author="Fyodor Dostoyevskiy" data-rating="4.9" data-year="1866">
-            <div class="cover" style="--cover:#2f3d4f;--cover-accent:#d6b778"><span class="cover__label">JAHON KLASSIKASI</span><h3>Jinoyat va jazo</h3><p>F. Dostoyevskiy</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Roman · 1866</p><div class="book-card__foot"><span>★ 4.9</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="ertak" data-title="Ming bir kecha" data-author="Xalq ertaklari" data-rating="4.6" data-year="1830">
-            <div class="cover" style="--cover:#8a5b1f;--cover-accent:#f6df9f"><span class="cover__label">XALQ ERTAKLARI</span><h3>Ming bir kecha</h3><p>Xalq ertaklari</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Ertak · 1830</p><div class="book-card__foot"><span>★ 4.6</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="sarguzasht" data-title="Tom Soyerning sarguzashtlari" data-author="Mark Tven" data-rating="4.7" data-year="1876">
-            <div class="cover" style="--cover:#3f6b52;--cover-accent:#e9cf94"><span class="cover__label">SARGUZASHT</span><h3>Tom Soyer</h3><p>Mark Tven</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Sarguzasht · 1876</p><div class="book-card__foot"><span>★ 4.7</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="tarix" data-title="O'tmish sari sayohat" data-author="Tarixchi sayyoh" data-rating="4.5" data-year="2021">
-            <div class="cover" style="--cover:#5d3b4d;--cover-accent:#e8c79a"><span class="cover__label">TARIX</span><h3>O'tmish sari sayohat</h3><p>Tarixchi sayyoh</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Tarix · 2021</p><div class="book-card__foot"><span>★ 4.5</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-          <article class="book-card" data-genre="roman" data-title="Alkimyogar" data-author="Paulo Koelyo" data-rating="4.6" data-year="1988">
-            <div class="cover" style="--cover:#264f5a;--cover-accent:#ecc884"><span class="cover__label">ZAMONAVIY ROMAN</span><h3>Alkimyogar</h3><p>Paulo Koelyo</p><span class="cover__line"></span></div>
-            <div class="book-card__body"><p class="book-card__genre">Roman · 1988</p><div class="book-card__foot"><span>★ 4.6</span><div><button class="save-btn" type="button" aria-label="Saqlash" aria-pressed="false">♡</button><button class="read-btn" type="button">O'qish</button></div></div></div>
-          </article>
-        </div>
+        <p class="search-result" id="search-result" role="status" aria-live="polite" hidden></p>
+        <div class="books" id="books-grid"></div>
         <p class="empty-state" id="empty-state" hidden>Hech narsa topilmadi. Boshqa so'z bilan qidirib ko'ring.</p>
       </div>
     </section>
@@ -198,7 +180,7 @@
           <h2>Bu hafta nimani o'qish kerak?</h2>
           <p>Tahririyatimiz tanlagan asar — kichik detallarda katta ma'no topish haqida. Har hafta yangi tanlov, har kuni yangi kashfiyot.</p>
           <ul class="feature__meta"><li>350 sahifa</li><li>O'zbek tilida</li><li>Audio ham bor</li></ul>
-          <button class="btn btn--light" type="button" data-read="Yorug'lik sari yo'l" data-author="Kitobxon tahririyati">O'qishni boshlash</button>
+          <button class="btn btn--light" type="button" data-book="otgan-kunlar">O'qishni boshlash</button>
         </div>
       </div>
     </section>
@@ -241,16 +223,28 @@
     <div class="reader__backdrop" data-close></div>
     <div class="reader__dialog" role="dialog" aria-modal="true" aria-labelledby="reader-title">
       <button class="reader__close" type="button" data-close aria-label="Yopish">×</button>
-      <div class="reader__side"><p>KITOBXON</p><div class="reader__mini-cover" id="reader-cover"></div><small id="reader-author"></small></div>
+      <div class="reader__side"><p>KITOBXON</p><img class="reader__mini-cover" id="reader-cover" alt="Kitob muqovasi"><small id="reader-author"></small></div>
       <div class="reader__content">
-        <p class="reader__eyebrow" id="reader-page">1-sahifa</p>
+        <p class="reader__eyebrow" id="reader-page">1-bet</p>
         <h2 id="reader-title">Kitob</h2>
+        <h3 class="reader__chapter" id="reader-chapter"></h3>
+        <p class="reader__resume" id="reader-resume" hidden></p>
         <div class="reader__text" id="reader-text"></div>
-        <div class="reader__nav"><button type="button" id="prev-page">Oldingi sahifa</button><button type="button" id="next-page">Keyingi sahifa</button></div>
+        <div class="reader__progress">
+          <div class="reader__bar"><span id="reader-bar"></span></div>
+          <form class="reader__jump" id="reader-jump">
+            <label for="page-jump">Betga o'tish</label>
+            <input id="page-jump" type="number" min="1" value="1">
+            <button type="submit">Ochish</button>
+          </form>
+        </div>
+        <div class="reader__nav"><button type="button" id="prev-page">Oldingi bet</button><button type="button" id="next-page">Keyingi bet</button></div>
       </div>
     </div>
   </div>
 
+  <datalist id="qidiruv-taklif"></datalist>
+  <script src="books.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
